@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Вакансия исследователя проекта АП 4 модуль.">
+    <title>Исследователь — АП 4 модуль</title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <style>
+      body {
+        min-height: 100svh;
+        color: #fff;
+        background: #000;
+      }
+
+      .vacancy-detail {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(360px, 49vw) minmax(360px, 1fr);
+        min-height: 100svh;
+        overflow: hidden;
+        background:
+          radial-gradient(ellipse 48% 72% at 19% 52%, rgba(185, 159, 113, 0.12), rgba(0, 0, 0, 0) 62%),
+          #000;
+      }
+
+      .vacancy-portrait {
+        position: relative;
+        min-height: 100svh;
+        overflow: hidden;
+      }
+
+      .vacancy-portrait img {
+        position: absolute;
+        top: 14px;
+        left: 46px;
+        width: min(532px, calc(100% - 72px));
+        height: min(648px, calc(100svh - 72px));
+        max-width: none;
+        object-fit: cover;
+        object-position: 29% 50%;
+      }
+
+      .vacancy-portrait::after {
+        content: "";
+        position: absolute;
+        left: 46px;
+        top: 14px;
+        width: min(532px, calc(100% - 72px));
+        height: min(648px, calc(100svh - 72px));
+        background: linear-gradient(rgba(0, 0, 0, 0) 58%, #000 100%);
+        pointer-events: none;
+      }
+
+      .vacancy-detail__content {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        min-height: 100svh;
+        padding: clamp(72px, 11svh, 92px) clamp(28px, 6vw, 72px) 46px clamp(26px, 4.6vw, 58px);
+      }
+
+      .vacancy-main {
+        max-width: 520px;
+      }
+
+      .vacancy-main h1 {
+        margin: 0;
+        font-family: var(--font-heading);
+        font-size: clamp(48px, 5.45vw, 72px);
+        font-weight: 400;
+        line-height: 0.92;
+        letter-spacing: 0;
+      }
+
+      .vacancy-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 10px;
+        color: rgba(255, 255, 255, 0.92);
+        font-size: clamp(18px, 2vw, 22px);
+        line-height: 1;
+      }
+
+      .vacancy-main p {
+        max-width: 392px;
+        margin: 18px 0 0;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 14px;
+        line-height: 1.28;
+      }
+
+      .vacancy-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 26px;
+      }
+
+      .vacancy-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 34px;
+        padding: 8px 13px 9px;
+        border-radius: 21px;
+        color: #000;
+        background: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1;
+        transition: background-color 160ms ease, transform 160ms ease;
+      }
+
+      .vacancy-button:hover,
+      .vacancy-button:focus-visible {
+        background: #e7e4e1;
+        outline: none;
+        transform: translateY(-1px);
+      }
+
+      .vacancy-button--ghost {
+        color: rgba(255, 255, 255, 0.82);
+        background: rgba(255, 255, 255, 0.11);
+      }
+
+      .vacancy-button--ghost:hover,
+      .vacancy-button--ghost:focus-visible {
+        background: rgba(255, 255, 255, 0.18);
+      }
+
+      .vacancy-facts {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        max-width: 520px;
+        margin-top: 34px;
+      }
+
+      .vacancy-fact {
+        min-height: 112px;
+        padding: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .vacancy-fact span {
+        display: block;
+        color: #b99f71;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .vacancy-fact p {
+        margin: 12px 0 0;
+        color: rgba(255, 255, 255, 0.76);
+        font-size: 13px;
+        line-height: 1.3;
+      }
+
+      .vacancy-bottom {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 28px;
+      }
+
+      .vacancy-note {
+        max-width: 360px;
+        color: rgba(255, 255, 255, 0.46);
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .next-vacancy {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(92px, 1fr) 92px 38px;
+        align-items: center;
+        width: min(270px, 100%);
+        min-height: 120px;
+        background: #1c1c1c;
+        transition: background-color 160ms ease, transform 160ms ease;
+      }
+
+      .next-vacancy:hover,
+      .next-vacancy:focus-visible {
+        background: #252525;
+        outline: none;
+        transform: translateX(3px);
+      }
+
+      .next-vacancy strong {
+        padding-left: 15px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .next-vacancy__image {
+        position: relative;
+        height: 114px;
+        overflow: hidden;
+      }
+
+      .next-vacancy__image img {
+        width: 200px;
+        height: 114px;
+        max-width: none;
+        object-fit: cover;
+        object-position: 29% 50%;
+        transform: translateX(-54px);
+      }
+
+      .next-vacancy__image::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0) 58%, #000 100%);
+      }
+
+      .next-vacancy__arrow {
+        width: 38px;
+        height: 54px;
+        margin-left: 10px;
+      }
+
+      @media (max-width: 840px) {
+        body {
+          overflow-x: hidden;
+        }
+
+        .vacancy-detail {
+          display: block;
+          overflow: visible;
+        }
+
+        .vacancy-portrait {
+          min-height: 52svh;
+        }
+
+        .vacancy-portrait img,
+        .vacancy-portrait::after {
+          left: 50%;
+          top: 58px;
+          width: min(520px, calc(100vw - 36px));
+          height: min(520px, 52svh);
+          transform: translateX(-50%);
+        }
+
+        .vacancy-detail__content {
+          min-height: auto;
+          padding: 16px 20px 28px;
+        }
+
+        .vacancy-main h1 {
+          font-size: clamp(42px, 13vw, 56px);
+        }
+
+        .vacancy-main p {
+          max-width: none;
+        }
+
+        .vacancy-facts {
+          grid-template-columns: 1fr;
+          margin-top: 24px;
+        }
+
+        .vacancy-bottom {
+          display: grid;
+          margin-top: 28px;
+        }
+
+        .next-vacancy {
+          width: min(270px, 100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="back-home-button" href="../index.html" aria-label="Вернуться на главную">← На главную</a>
+
+    <main class="vacancy-detail">
+      <div class="vacancy-portrait" aria-hidden="true">
+        <img src="../assets/images/vacancy-detail-portrait.png" alt="">
+      </div>
+
+      <section class="vacancy-detail__content" aria-labelledby="vacancy-title">
+        <div>
+          <div class="vacancy-main">
+            <h1 id="vacancy-title">Исследователь</h1>
+            <div class="vacancy-meta" aria-label="Условия вакансии">
+              <span>3+ года</span>
+              <span>20ч/недл</span>
+              <span>гибрид</span>
+            </div>
+            <p>
+              Исследователь изучает полевые материалы, проверяет гипотезы и помогает превращать наблюдения экспедиций в понятные выводы. В работе важны критическое мышление, аккуратность с источниками и готовность разбираться в неоднозначных данных.
+            </p>
+            <div class="vacancy-actions">
+              <a class="vacancy-button" href="contact.html">Работать</a>
+              <a class="vacancy-button vacancy-button--ghost" href="#details">Подробнее</a>
+            </div>
+          </div>
+
+          <div class="vacancy-facts" id="details" aria-label="Подробности вакансии">
+            <article class="vacancy-fact">
+              <span>Задачи</span>
+              <p>Разбирать архивные снимки, вести карточки находок, сверять полевые заметки и формировать короткие аналитические выводы.</p>
+            </article>
+            <article class="vacancy-fact">
+              <span>Важно</span>
+              <p>Опыт исследовательской работы, внимательность к деталям, спокойная письменная коммуникация и готовность работать с неполными данными.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="vacancy-bottom">
+          <p class="vacancy-note" id="apply">
+            После отклика команда пришлёт короткое тестовое задание: нужно будет описать объект по фрагменту материалов и предложить план проверки гипотезы.
+          </p>
+          <a class="next-vacancy" href="vacancy.html" aria-label="Следующая вакансия: Инженер">
+            <strong>Инженер</strong>
+            <span class="next-vacancy__image">
+              <img src="../assets/images/vacancy-detail-portrait.png" alt="">
+            </span>
+            <img class="next-vacancy__arrow" src="../assets/icons/vacancy-next-arrow.svg" alt="">
+          </a>
+        </div>
+      </section>
+    </main>
+    <script src="../scripts/site.js"></script>
+  </body>
+</html>

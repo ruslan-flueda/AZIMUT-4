@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Азимут — открытые данные">
+    <meta name="description" content="Архивно-исследовательский сайт о следах, засыпанных временем.">
+    <title>AZIMUT</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://esm.sh/three@0.165.0",
+          "three/addons/": "https://esm.sh/three@0.165.0/examples/jsm/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="styles/base.css">
+  </head>
+  <body class="home-page">
+    <header class="site-header" data-header>
+      <a class="brand-link" href="index.html" aria-label="АП 4 модуль">
+        <img src="assets/icons/brand-mark.svg" alt="" width="30" height="30">
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация" data-site-nav>
+        <a href="pages/archive.html">Архив</a>
+        <a href="pages/center.html">Оборудование</a>
+        <a href="pages/vacancies.html">Вакансии</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-screen" aria-labelledby="hero-title">
+        <canvas class="hero-three-canvas" data-hero-three aria-hidden="true"></canvas>
+        <img class="hero-image" src="assets/images/hero-landscape.jpg" alt="Пустынный горный ландшафт в тёплом вечернем свете">
+        <div class="hero-content">
+          <h1 id="hero-title">Время их засыпало.<br>Мы найдём их следы</h1>
+        </div>
+        <a class="scroll-cue" href="#flag-story" aria-label="Перейти к следующему разделу">
+          <img src="assets/icons/arrow-down.svg" alt="" width="20" height="20">
+        </a>
+      </section>
+
+      <section class="flag-scroll-scene scroll-layer" id="flag-story" data-flag-scroll>
+        <div class="flag-screen reveal-section" aria-labelledby="flag-title" data-reveal-section>
+          <div class="flag-visual" data-reveal-item="image">
+            <img src="assets/images/flag-scene.png" alt="Разорванный белый флаг на тёмной скальной насыпи">
+          </div>
+
+          <div class="flag-copy flag-copy--initial" data-reveal-item="text">
+            <h2 id="flag-title">Цивилизации убежденные<br>в своей прочности</h2>
+          </div>
+
+          <div class="flag-copy flag-copy--final" aria-live="polite">
+            <h2>но встретившие<br>нечто сильнее себя</h2>
+            <a href="pages/center.html">Подробнее →</a>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="video-story-screen scroll-layer" aria-labelledby="video-story-title">
+        <video class="video-story-media" autoplay muted loop playsinline preload="auto">
+          <source src="assets/videos/camera-smooth-pan.mp4" type="video/mp4">
+        </video>
+        <div class="video-story-tint" aria-hidden="true"></div>
+        <div class="video-story-copy">
+          <h2 id="video-story-title">Мы исследователи<br>с горящими глазами</h2>
+          <a href="pages/center.html">Подробнее о центре →</a>
+        </div>
+      </section>
+
+      <div class="vacancy-contact-scroll scroll-layer">
+        <section class="vacancy-fan-screen" aria-labelledby="vacancy-fan-title" data-fan-section>
+          <div class="fan-light" aria-hidden="true"></div>
+          <div class="fan-cards" aria-label="Карточки вакансий">
+            <article class="fan-card fan-card--researcher">
+              <img src="assets/images/1character.png" alt="">
+            </article>
+            <article class="fan-card fan-card--engineer">
+              <img src="assets/images/2character.png" alt="">
+            </article>
+            <article class="fan-card fan-card--signal">
+              <img src="assets/images/3character.png" alt="">
+            </article>
+            <article class="fan-card fan-card--constructor">
+              <img src="assets/images/4character.png" alt="">
+            </article>
+          </div>
+          <div class="vacancy-fan-copy">
+            <h2 id="vacancy-fan-title">Присоединяйся<br>к команде лучших</h2>
+            <a href="pages/vacancies.html">Вакансии -></a>
+          </div>
+        </section>
+
+        <section class="contact-screen contact-screen--home" aria-labelledby="contact-title-home">
+          <div class="contact-particles" data-contact-particles aria-hidden="true"></div>
+
+          <section class="contact-panel">
+            <h1 id="contact-title-home">Открыты для интересных предложений</h1>
+            <form class="contact-form" action="pages/404.html" method="get">
+              <label class="visually-hidden" for="contact-email-home">Email</label>
+              <input
+                id="contact-email-home"
+                name="email"
+                type="email"
+                inputmode="email"
+                autocomplete="email"
+                placeholder="azimut@tech.world"
+                required
+              >
+              <button type="submit">Отправить →</button>
+            </form>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <script src="scripts/site.js"></script>
+    <script type="module" src="scripts/hero-three.js"></script>
+  </body>
+</html>

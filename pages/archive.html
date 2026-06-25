@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Архив материалов проекта АП 4 модуль.">
+    <title>Архив — АП 4 модуль</title>
+    <link rel="stylesheet" href="../styles/base.css">
+  </head>
+  <body class="inner-page archive-page">
+    <a class="back-home-button" href="../index.html" aria-label="Вернуться на главную">← На главную</a>
+
+    <header class="site-header site-header--inner" data-header>
+      <a class="brand-link" href="../index.html" aria-label="АП 4 модуль">
+        <img src="../assets/icons/brand-mark.svg" alt="" width="30" height="29">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация" data-site-nav>
+        <a class="is-active" href="archive.html">Архив</a>
+        <a href="center.html">Центр</a>
+        <a href="vacancies.html">Вакансии</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="archive" data-archive aria-labelledby="archive-title">
+        <div class="archive-glow" data-archive-glow aria-hidden="true"></div>
+
+        <div class="archive-slider" data-archive-slider>
+          <div class="archive-slider__stage">
+            <svg class="archive-curve" viewBox="0 0 240 680" aria-hidden="true" focusable="false">
+              <path
+                class="archive-curve__path"
+                data-archive-path
+                d="M30 28 C168 164 168 516 30 652"
+              />
+            </svg>
+            <button class="archive-thumb" type="button" data-archive-thumb aria-label="Переместить по архиву"></button>
+            <div class="archive-labels" data-archive-labels aria-label="Экспедиции архива"></div>
+          </div>
+        </div>
+
+        <div class="archive-copy" data-archive-copy>
+          <span class="archive-marker" data-archive-marker></span>
+          <h1 id="archive-title" data-archive-title>Архив</h1>
+          <p data-archive-description></p>
+        </div>
+
+        <div class="archive-content" data-archive-content aria-live="polite"></div>
+      </section>
+    </main>
+
+    <div class="archive-fullscreen" data-archive-fullscreen hidden>
+      <div class="archive-fullscreen__backdrop" aria-hidden="true"></div>
+      <section
+        class="archive-fullscreen__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Просмотр архивной карточки"
+        tabindex="-1"
+      >
+        <button class="archive-fullscreen__back" type="button" data-archive-fullscreen-close>
+          ← Назад
+        </button>
+
+        <button
+          class="archive-fullscreen__side archive-fullscreen__side--prev"
+          type="button"
+          aria-label="Предыдущая карточка"
+          data-archive-fullscreen-prev
+        ></button>
+        <button
+          class="archive-fullscreen__side archive-fullscreen__side--next"
+          type="button"
+          aria-label="Следующая карточка"
+          data-archive-fullscreen-next
+        ></button>
+
+        <button
+          class="archive-fullscreen__arrow archive-fullscreen__arrow--prev"
+          type="button"
+          aria-label="Предыдущая карточка"
+          data-archive-fullscreen-prev
+        >
+          ←
+        </button>
+        <button
+          class="archive-fullscreen__arrow archive-fullscreen__arrow--next"
+          type="button"
+          aria-label="Следующая карточка"
+          data-archive-fullscreen-next
+        >
+          →
+        </button>
+
+        <div class="archive-fullscreen__viewport" data-archive-fullscreen-viewport>
+          <div class="archive-fullscreen__track" data-archive-fullscreen-track></div>
+        </div>
+      </section>
+    </div>
+
+    <script src="../scripts/site.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Форма персонального предложения проекта АП 4 модуль.">
+    <title>Персональное предложение — АП 4 модуль</title>
+    <link rel="stylesheet" href="../styles/base.css">
+  </head>
+  <body class="contact-page">
+    <main class="contact-screen" aria-labelledby="contact-title">
+      <div class="contact-particles" data-contact-particles aria-hidden="true"></div>
+
+      <section class="contact-panel">
+        <h1 id="contact-title">Связаться с персональным<br>предложением</h1>
+        <form class="contact-form" action="404.html" method="get">
+          <label class="visually-hidden" for="contact-email">Email</label>
+          <input
+            id="contact-email"
+            name="email"
+            type="email"
+            inputmode="email"
+            autocomplete="email"
+            placeholder="azimut@tech.world"
+            required
+          >
+          <button type="submit">Отправить →</button>
+        </form>
+      </section>
+    </main>
+    <script src="../scripts/site.js"></script>
+  </body>
+</html>

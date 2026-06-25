@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Центр проекта АП 4 модуль.">
+    <title>Центр — АП 4 модуль</title>
+    <link rel="preload" href="../assets/videos/Runway Kling 3.0 Omni Standard.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="../assets/videos/Runway Kling 3 Omni Standard June 24.mp4" as="video" type="video/mp4">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body class="center-page">
+    <a class="center-back" href="../index.html" aria-label="Вернуться на главную">← На главную</a>
+
+    <main class="center-hero" aria-labelledby="center-title" data-center-page>
+      <video class="center-hero__image is-active" autoplay muted loop playsinline preload="auto" aria-hidden="true" data-center-video="0">
+        <source src="../assets/videos/Runway Kling 3.0 Omni Standard.mp4" type="video/mp4">
+      </video>
+      <video class="center-hero__image" muted loop playsinline preload="auto" aria-hidden="true" data-center-video="1">
+        <source src="../assets/videos/Runway Kling 3 Omni Standard June 24.mp4" type="video/mp4">
+      </video>
+
+      <section class="center-copy">
+        <h1 id="center-title" data-center-title>AURORA-7</h1>
+        <p data-center-description>
+          Автономная машина для разведки поверхности, сбора образцов и движения по сложному каменистому рельефу. Используется там, где человеку находиться опасно или невозможно.
+        </p>
+      </section>
+
+      <dl class="center-stats" aria-label="Показатели AURORA-7">
+        <div>
+          <dt data-center-stat-label="0">Запас хода</dt>
+          <dd data-center-stat-value="0">38,6 км</dd>
+        </div>
+        <div>
+          <dt data-center-stat-label="1">Готовность</dt>
+          <dd data-center-stat-value="1">82%</dd>
+        </div>
+        <div>
+          <dt data-center-stat-label="2">Темп. среды</dt>
+          <dd data-center-stat-value="2">55°C</dd>
+        </div>
+        <div>
+          <dt data-center-stat-label="3">Давление на ось</dt>
+          <dd data-center-stat-value="3">12,4 kN</dd>
+        </div>
+        <div>
+          <dt data-center-stat-label="4">Задержка связи</dt>
+          <dd data-center-stat-value="4">4м 34с</dd>
+        </div>
+      </dl>
+
+      <div class="center-control" aria-label="Состояние центра">
+        <div class="center-control__signal" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <button class="center-control__next" type="button" aria-label="Следующий аппарат" data-center-next>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </main>
+
+    <script src="../scripts/site.js"></script>
+  </body>
+</html>
